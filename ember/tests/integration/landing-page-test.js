@@ -1,6 +1,5 @@
 import Ember from 'ember';
-import startApp from 'railschaos/tests/helpers/start-app';
-import Ember from 'ember';
+import startApp from 'emberchaos/tests/helpers/start-app';
 
 var App;
 module('Integration - Landing Page', {
