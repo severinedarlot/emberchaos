@@ -1,6 +1,16 @@
 emberchaos
 ==========
 
+How use this project
+--------------------
+
+```
+cd rails
+bundle install
+cd ../ember
+npm install
+bower install
+```
 
 
 How this project has been created
