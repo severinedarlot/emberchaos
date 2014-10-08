@@ -35,5 +35,6 @@
 /ember/connect.lock
 /ember/coverage/*
 /ember/libpeerconnection.log
+/ember/node_modules
 npm-debug.log
 testem.log

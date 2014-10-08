@@ -8,9 +8,9 @@ How use this project
 cd rails
 bundle install
 cd ../ember
+cd ember
 npm install
 bower install
-cd ember
 ember server
 ```
 
