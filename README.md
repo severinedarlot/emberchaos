@@ -10,7 +10,12 @@ bundle install
 cd ../ember
 npm install
 bower install
+cd ember
+ember server
 ```
+
+Voir la partie client: http://localhost:4200/
+Voir les tests: http://localhost:4200/tests
 
 
 How this project has been created
