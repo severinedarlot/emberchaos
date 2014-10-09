@@ -7,11 +7,13 @@ How use this project
 ```
 cd rails
 bundle install
+rake db:create db:migrate db:seed // juste une fois
+rails s
 cd ../ember
 cd ember
 npm install
 bower install
-ember server
+ember server --proxy http://localhost:3000
 ```
 
 Voir la partie client: http://localhost:4200/
