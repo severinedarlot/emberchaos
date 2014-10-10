@@ -8,15 +8,15 @@
 ################
 
 # Ignore bundler config.
-/rails/.bundle
+/.bundle
 
 # Ignore the default SQLite database.
-/rails/db/*.sqlite3
-/rails/db/*.sqlite3-journal
+/db/*.sqlite3
+/db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
-/rails/log/*.log
-/rails/tmp
+/log/*.log
+/tmp
 
 
 # For ember part

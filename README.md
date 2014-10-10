@@ -5,19 +5,17 @@ How use this project
 --------------------
 
 ```
-cd rails
 bundle install
 rake db:create db:migrate db:seed // juste une fois
 rails s
-cd ../ember
 cd ember
 npm install
 bower install
 ember server --proxy http://localhost:3000
 ```
 
-Voir la partie client: http://localhost:4200/
-Voir les tests: http://localhost:4200/tests
+See the client part: http://localhost:4200/
+See the client tests: http://localhost:4200/tests
 
 
 How this project has been created
@@ -26,15 +24,15 @@ How this project has been created
 Ruby, rails, Node, Npm, Postgres were already installed, next:
 
 ```
+rails new emberchaos -B -S -d postgresql
 npm install -g ember-cli
-rails new railschaos -B -S -d postgresql
-mv railschaos rails
-ember new railschaos --skip-git
-mv railschaos ember
+cd emberchaos
+ember new emberchaos --skip-git
+mv emberchaos ember
 git add .
 git commit -m "initialization"
 git push origin master
-rm -rf rails/app/assets
+rm -rf app/assets
 ```
 
 In rails/Gemfile remove the following:
