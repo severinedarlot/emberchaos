@@ -1,3 +1,10 @@
+<ul>
 {{#each}}
-  {{link-to name 'experts.show' this}}
+  <li>
+    {{#link-to 'experts.show' this}} 
+      {{name}} ({{skills.length}})
+    {{/link-to}}
+
+  </li>
 {{/each}}
+</ul>

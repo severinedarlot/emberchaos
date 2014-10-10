@@ -2,6 +2,6 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 
-Expert.create(name: 'Bugs Bunny')
-Expert.create(name: 'Wile E. Coyote')
-Expert.create(name: 'Yosemite Sam')
+Expert.create(name: 'Harry Potter')
+Expert.create(name: 'Hermione Granger')
+Expert.create(name: 'Ron Weasley')

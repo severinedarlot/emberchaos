@@ -10,21 +10,33 @@ module('Integration - Expert Page', {
     var experts = [
       {
         id: 1,
-        name: 'Bugs Bunny'
+        name: 'Harry Potter',
+        skill_ids: [1,2]
       },
       {
         id: 2,
-        name: 'Wile E. Coyote'
+        name: 'Hermione Granger',
+        skill_ids: [3]
       },
       {
         id: 3,
-        name: 'Yosemite Sam'
+        name: 'Ron Weasley',
+        skill_ids: [4, 5, 6]
       }
+    ];
+
+    var skills = [
+      { id: 1, title: "Voler un oeuf à une maman dragon", speaker_id: 1 },
+      { id: 2, title: "Repousser des détraqueurs", speaker_id: 1 },
+      { id: 3, title: "Connait la bibliothèque de poudlard sur le bout des doigts.", speaker_id: 2 },
+      { id: 4, title: "Très bon joueur d'échecs magiques", speaker_id: 3 },
+      { id: 5, title: "Bon camarade mais parfois boudeur.", speaker_id: 3 },
+      { id: 6, title: "Possède toute une collection de pulls fait maison", speaker_id: 3 }
     ];
 
     server = new Pretender(function() {
       this.get('/api/experts', function(request) {
-        return [200, {"Content-Type": "application/json"}, JSON.stringify({experts: experts})];
+        return [200, {"Content-Type": "application/json"}, JSON.stringify({experts: experts, skills: skills})];
       });
 
       this.get('/api/experts/:id', function(request) {
@@ -34,7 +46,7 @@ module('Integration - Expert Page', {
           }
         });
 
-        return [200, {"Content-Type": "application/json"}, JSON.stringify({expert: expert})];
+        return [200, {"Content-Type": "application/json"}, JSON.stringify({expert: expert, skills: skills})];
       });
     });
 
@@ -53,24 +65,24 @@ test('Should allow navigation to the experts page from the landing page', functi
   });
 });
 
-test('Should list all experts', function() {
+test('Should list all experts and number of skills', function() {
   visit('/experts').then(function() {
-    equal(find('a:contains("Bugs Bunny")').length, 1);
-    equal(find('a:contains("Wile E. Coyote")').length, 1);
-    equal(find('a:contains("Yosemite Sam")').length, 1);
+    equal(find('a:contains("Harry Potter (2)")').length, 1);
+    equal(find('a:contains("Hermione Granger (1)")').length, 1);
+    equal(find('a:contains("Ron Weasley (3)")').length, 1);
   });
 });
 
 test('Should be able to navigate to a expert page', function() {
   visit('/experts').then(function() {
-    click('a:contains("Bugs Bunny")').then(function() {
-      equal(find('h4').text(), 'Bugs Bunny');
+    click('a:contains("Harry Potter")').then(function() {
+      equal(find('h4').text(), 'Harry Potter');
     });
   });
 });
 
 test('Should be able visit a expert page', function() {
   visit('/experts/1').then(function() {
-    equal(find('h4').text(), 'Bugs Bunny');
+    equal(find('h4').text(), 'Harry Potter');
   });
 });
