@@ -18,6 +18,8 @@
 /log/*.log
 /tmp
 
+/config/secrets.yml
+
 
 # For ember part
 ################
