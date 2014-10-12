@@ -1,6 +1,10 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
+User.create([
+  {email: 'green@mail.com', password: '12345678', password_confirmation: '12345678'},
+  {email: 'pink@mail.com', password: '12345678', password_confirmation: '12345678'}
+]) 
 
 harry = Expert.create(name: 'Harry Potter')
 hermione = Expert.create(name: 'Hermione Granger')

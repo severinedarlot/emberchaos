@@ -1,7 +1,17 @@
+{{#if session.isAuthenticated}}
+  <button {{ action 'invalidateSession' }}>Logout</button>
+{{else}}
+  {{#link-to 'login'}}Login{{/link-to}}
+{{/if}}
+
 <h2 id='title'>Welcome to Chaos</h2>
+
+
+
 
 {{link-to 'Home' 'application'}}
 {{link-to 'About' 'about'}}
 {{link-to 'Experts' 'experts'}}
+{{link-to 'Account' 'account'}}
 
 {{outlet}}

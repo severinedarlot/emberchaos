@@ -10,6 +10,9 @@ Router.map(function() {
   this.resource('experts', function() {
     this.route('show', {path: ':expert_id'});
   });
+  this.route('protected');
+  this.route('account');
+  this.route('login');
 });
 
 export default Router;

@@ -35,4 +35,5 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'active_model_serializers'
+gem 'devise'
 
