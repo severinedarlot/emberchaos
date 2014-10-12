@@ -2,6 +2,15 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 
-Expert.create(name: 'Harry Potter')
-Expert.create(name: 'Hermione Granger')
-Expert.create(name: 'Ron Weasley')
+harry = Expert.create(name: 'Harry Potter')
+hermione = Expert.create(name: 'Hermione Granger')
+ron = Expert.create(name: 'Ron Weasley')
+
+harry.skills.create(title: "Voler un oeuf à une maman dragon.")
+harry.skills.create(title: "Repousser des détraqueurs.")
+
+hermione.skills.create(title: "Connait la bibliothèque de poudlard sur le bout des doigts.")
+
+ron.skills.create(title: "Très bon joueur d'échecs magiques.")
+ron.skills.create(title: "Bon camarade mais parfois boudeur.")
+ron.skills.create(title: "Possède toute une collection de pulls fait maison")

@@ -26,12 +26,12 @@ module('Integration - Expert Page', {
     ];
 
     var skills = [
-      { id: 1, title: "Voler un oeuf à une maman dragon", speaker_id: 1 },
-      { id: 2, title: "Repousser des détraqueurs", speaker_id: 1 },
-      { id: 3, title: "Connait la bibliothèque de poudlard sur le bout des doigts.", speaker_id: 2 },
-      { id: 4, title: "Très bon joueur d'échecs magiques", speaker_id: 3 },
-      { id: 5, title: "Bon camarade mais parfois boudeur.", speaker_id: 3 },
-      { id: 6, title: "Possède toute une collection de pulls fait maison", speaker_id: 3 }
+      { id: 1, title: "Voler un oeuf à une maman dragon", expert_id: 1 },
+      { id: 2, title: "Repousser des détraqueurs", expert_id: 1 },
+      { id: 3, title: "Connait la bibliothèque de poudlard sur le bout des doigts.", expert_id: 2 },
+      { id: 4, title: "Très bon joueur d'échecs magiques", expert_id: 3 },
+      { id: 5, title: "Bon camarade mais parfois boudeur.", expert_id: 3 },
+      { id: 6, title: "Possède toute une collection de pulls fait maison", expert_id: 3 }
     ];
 
     server = new Pretender(function() {
@@ -45,11 +45,14 @@ module('Integration - Expert Page', {
             return expert;
           }
         });
-
-        return [200, {"Content-Type": "application/json"}, JSON.stringify({expert: expert, skills: skills})];
+        var expertSkills = skills.filter(function(skill) {
+          if (skill.expert_id === expert.id) {
+            return true;
+          }
+        });
+        return [200, {"Content-Type": "application/json"}, JSON.stringify({expert: expert, skills: expertSkills})];
       });
     });
-
   },
   teardown: function() {
     Ember.run(App, 'destroy');
@@ -84,5 +87,12 @@ test('Should be able to navigate to a expert page', function() {
 test('Should be able visit a expert page', function() {
   visit('/experts/1').then(function() {
     equal(find('h4').text(), 'Harry Potter');
+  });
+});
+
+test('Should list all skills for a expert', function() {
+  visit('/experts/1').then(function() {
+    equal(find('li:contains("Voler un oeuf à une maman dragon")').length, 1);
+    equal(find('li:contains("Repousser des détraqueurs")').length, 1);
   });
 });
