@@ -10,6 +10,7 @@ group :development, :test do
 end
 group :production do
   gem 'pg'
+  gem 'shelly-dependencies'
 end
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes

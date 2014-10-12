@@ -6,7 +6,7 @@ How use this project
 
 ```
 bundle install
-rake db:create db:migrate db:seed // juste une fois
+rake db:create db:migrate db:seed // just one time
 rails s
 cd ember
 npm install
@@ -16,6 +16,21 @@ ember server --proxy http://localhost:3000
 
 See the client part: http://localhost:4200/
 See the client tests: http://localhost:4200/tests
+
+How deploy this project
+-----------------------
+
+Put the ember build result in rails public directory:
+
+```
+./build.sh
+```
+
+Use Shelly (https://shellycloud.com/documentation/quick_start) to deploy :
+
+```
+gem 'shelly-dependencies'  // just one time
+```
 
 
 How this project has been created
