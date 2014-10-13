@@ -79,11 +79,7 @@ Next, run in rails:
 bundle install
 ```
 
+Documentation
+--------------
 
-Run ember server
------------------
-
-cd ember
-ember server
-
-Voir les tests: http://localhost:4200/tests
+Devise: http://givan.se/p/00000000
