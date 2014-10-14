@@ -1,5 +1,4 @@
 import Ember from 'ember';
-//import Pretender from 'pretender';
 import startApp from 'emberchaos/tests/helpers/start-app';
 
 var App, server;
@@ -37,6 +36,10 @@ module('Integration - Expert Page', {
     server = new Pretender(function() {
       this.get('/api/experts', function(request) {
         return [200, {"Content-Type": "application/json"}, JSON.stringify({experts: experts, skills: skills})];
+      });
+
+      this.get('/api/csrf', function(request) {
+        return [200, {"Content-Type": "application/json"}, JSON.stringify({authenticity_token: "piou"})];
       });
 
       this.get('/api/experts/:id', function(request) {
