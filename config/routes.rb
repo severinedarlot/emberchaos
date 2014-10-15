@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'sessions' }
   namespace :api do
     resources :experts
+    resources :users, only: [:create]
     get :csrf, to: 'csrf#index'
   end
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,7 +1,8 @@
 {{#if session.isAuthenticated}}
   <button {{ action 'invalidateSession' }}>Logout</button>
 {{else}}
-  {{#link-to 'login'}}Login{{/link-to}}
+  {{#link-to 'login'}}Sign in{{/link-to}}
+  {{#link-to 'signup'}}Sign up{{/link-to}}
 {{/if}}
 
 <h2 id='title'>Welcome to Chaos</h2>
