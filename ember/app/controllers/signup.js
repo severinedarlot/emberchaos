@@ -9,7 +9,7 @@ export default Ember.ObjectController.extend({
 				self.transitionToRoute('account');
 			}
 
-			function failure(model) {
+			function failure() {
 			}
 
       this.get('model').save().then(transitionToPost).catch(failure);
