@@ -9,11 +9,7 @@ class Api::UsersController < ApplicationController
     if user.save
       render json: user, status: :created
     else
-      #TODO: errors
-      user.errors.each {|error|
-      	puts "------>Error during user saving #{error}"
-    	}
-      render json: user, status: :error
+      render json: { errors: user.errors }, status: :unprocessable_entity
     end
   end
 end

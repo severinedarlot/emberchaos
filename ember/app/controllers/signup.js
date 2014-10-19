@@ -3,7 +3,16 @@ import Ember from 'ember';
 export default Ember.ObjectController.extend({
   actions: {
     save: function() {
-      this.get('model').save();
+    	var self = this;
+
+			function transitionToPost() {
+				self.transitionToRoute('account');
+			}
+
+			function failure(model) {
+			}
+
+      this.get('model').save().then(transitionToPost).catch(failure);
     }
   }
 });
