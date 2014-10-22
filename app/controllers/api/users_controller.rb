@@ -12,4 +12,13 @@ class Api::UsersController < ApplicationController
       render json: { errors: user.errors }, status: :unprocessable_entity
     end
   end
+
+  def show
+    id = params[:id]
+    if current_user.id == id
+      render json: current_user, serializer: IdentifiedUserSerializer
+    else
+      render json: User.find(id), serializer: UserSerializer
+    end
+  end
 end
