@@ -14,11 +14,28 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    id = params[:id]
+    id = params[:id].to_i
     if current_user.id == id
-      render json: current_user, serializer: IdentifiedUserSerializer
+      render json: current_user, root: :user, serializer: IdentifiedUserSerializer
     else
       render json: User.find(id), serializer: UserSerializer
+    end
+  end
+
+  def update
+    id = params[:id].to_i
+    if current_user.id == id
+      current_user.name = params[:user][:name] unless params[:user][:name].nil?
+      current_user.presentation = params[:user][:presentation] unless params[:user][:presentation].nil?
+      current_user.phone = params[:user][:phone] unless params[:user][:phone].nil?
+      current_user.localisation = params[:user][:localisation] unless params[:user][:localisation].nil?
+      if current_user.save
+        render json: {}, status: :ok
+      else
+        render json: { errors: user.errors }, status: :unprocessable_entity
+      end
+    else
+      render json: {}, status: :error
     end
   end
 end

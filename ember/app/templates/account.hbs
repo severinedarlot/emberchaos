@@ -1,3 +1,9 @@
 <div>
-You are: {{model.email}}.
+  <form>
+    Firstname and name: {{view 'autosave-text-field' valueBinding='name' modelBinding='model' placeholder='Firstname Name'}}<br>
+    Email: {{view 'autosave-text-field' valueBinding='email' modelBinding='model' placeholder='Email'}}<br>
+    Presentation: {{view 'autosave-text-area' valueBinding='presentation' modelBinding='model' placeholder='Short presentation of you'}}<br>
+    Phone: {{view 'autosave-text-field' valueBinding='phone' modelBinding='model' placeholder='Phone'}}<br>
+    Localisation: {{view 'autosave-text-area' valueBinding='localisation' modelBinding='model' placeholder='Localisation'}}<br>
+  </form>
 </div>
