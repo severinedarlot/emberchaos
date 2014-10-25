@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  has_many :skills
+
   before_save :ensure_authentication_token
 
   # Include default devise modules. Others available are:

@@ -4,6 +4,11 @@
     Email: {{view 'autosave-text-field' valueBinding='email' modelBinding='model' placeholder='Email'}}<br>
     Presentation: {{view 'autosave-text-area' valueBinding='presentation' modelBinding='model' placeholder='Short presentation of you'}}<br>
     Phone: {{view 'autosave-text-field' valueBinding='phone' modelBinding='model' placeholder='Phone'}}<br>
-    Localisation: {{view 'autosave-text-area' valueBinding='localisation' modelBinding='model' placeholder='Address, Country'}}<br>
+    Localisation: {{view 'autosave-text-area' valueBinding='localisation' modelBinding='model' placeholder='Address, Country'}}
+    <h3>Your skills</h3>
+    {{#each skill in savedSkills}}
+      {{view 'autosave-text-area' valueBinding='skill.title' modelBinding='skill' placeholder='Describe your skill'}}<br>
+    {{/each}}
+    {{view 'new-skill' userBinding='model'}}
   </form>
 </div>
