@@ -1,0 +1,10 @@
+<h1> Skills </h1>
+
+<ul>
+  {{#each skill in controller}}
+    <li>
+      <div>{{skill.title}}</div>
+      <div>{{skill.user.email}}</div>
+    </li>
+  {{/each}}
+</ul>

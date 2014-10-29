@@ -14,6 +14,7 @@ Router.map(function() {
   this.route('account');
   this.route('login');
   this.route('signup');
+  this.route('skills');
 });
 
 export default Router;

@@ -23,7 +23,7 @@ test('Should navigate to the About page', function() {
 
 test('Should allow navigating back to root from another page', function() {
   visit('/about').then(function() {
-    click('a:contains("Home")').then(function() {
+    click('a:contains("Skills")').then(function() {
       notEqual(find('h3').text(), 'About');
     });
   });

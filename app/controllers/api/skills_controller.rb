@@ -25,4 +25,9 @@ class Api::SkillsController < ApplicationController
       end
     end
   end
+
+  def index
+    # Really raw -> be carefull performances !
+    render json: Skill.all
+  end
 end

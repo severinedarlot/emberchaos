@@ -38,6 +38,10 @@ module('Integration - Expert Page', {
         return [200, {"Content-Type": "application/json"}, JSON.stringify({experts: experts, skills: skills})];
       });
 
+      this.get('/api/skills', function(request) {
+        return [200, {"Content-Type": "application/json"}, JSON.stringify({skills: skills})];
+      });
+
       this.get('/api/csrf', function(request) {
         return [200, {"Content-Type": "application/json"}, JSON.stringify({authenticity_token: "piou"})];
       });
