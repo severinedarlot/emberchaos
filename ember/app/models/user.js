@@ -9,6 +9,7 @@ export default DS.Model.extend({
   localisation: DS.attr('string'),
   presentation: DS.attr('string'),
   skills: DS.hasMany('skill', {async:true}),
+  identified: false,
 
   savedSkills: function() {
     return this.get('skills').filter(function (skill) {

@@ -1,7 +1,3 @@
 class SkillSerializer < ActiveModel::Serializer
-  embed :ids, include: true
-
-  attributes :id, :title
-
-  has_one :user
+  attributes :id, :title, :user_id
 end

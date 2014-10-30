@@ -15,7 +15,9 @@ class Api::UsersController < ApplicationController
 
   def show
     id = params[:id].to_i
-    if current_user.id == id
+    if current_user.nil? 
+      render json: User.find(id), serializer: UserSerializer
+    elsif current_user.id == id
       render json: current_user, root: :user, serializer: IdentifiedUserSerializer
     else
       render json: User.find(id), serializer: UserSerializer
