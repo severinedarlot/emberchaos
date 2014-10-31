@@ -1,6 +1,18 @@
 emberchaos
 ==========
 
+Prerequisite
+-------------
+
+rake
+ruby
+Rails
+postgresql
+node
+ember-cli: npm install -g ember-cli
+bower: npm install -g bower
+
+
 How use this project
 --------------------
 
