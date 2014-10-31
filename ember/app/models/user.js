@@ -15,5 +15,13 @@ export default DS.Model.extend({
     return this.get('skills').filter(function (skill) {
       return skill.get('id') !== null;
     });
-  }.property('skills.@each.id')
+  }.property('skills.@each.id'),
+
+  nickname: function () {
+    if (this.get('name') === undefined || this.get('name').trim().length === 0) {
+      return this.get('email').split('@')[0];
+    }
+    return this.get('name');
+  }.property('name', 'email')
+
 });

@@ -15,6 +15,7 @@
     "qunit": "~1.15.0",
     "pretender": "0.1.0",
     "ember-simple-auth": "0.6.7",
-    "rails-csrf": "0.0.5"
+    "rails-csrf": "0.0.5",
+    "foundation": "~5.4.7"
   }
 }
