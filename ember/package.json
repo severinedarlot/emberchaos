@@ -31,7 +31,8 @@
     "glob": "^4.0.5",
     "ember-cli-pretender": "~0.3.1",
     "ember-cli-simple-auth-devise": "~0.6.7",
-    "ember-cli-simple-auth": "~0.6.7"
+    "ember-cli-simple-auth": "~0.6.7",
+    "ember-cli-foundation": "0.0.2"
   },
   "dependencies": {
     "rails-csrf": "~0.1.2"
