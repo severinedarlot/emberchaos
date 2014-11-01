@@ -11,7 +11,7 @@ moduleForModel('user', 'User Model', {
 test('Basic name', function() {
   var user = this.subject({ name: 'toto' });
   equal(user.get('name'), 'toto');
-  Ember.run(function(){user.set('name', 'titi')};
+  Ember.run(function(){user.set('name', 'titi');});
   equal(user.get('name'), 'titi');
 });
 
@@ -26,10 +26,10 @@ test('Nickname is mail if name is undefined', function() {
 });
 
 test('Nickname is mail if name is empty', function() {
-	var user = self.subject({ name: ' ', email: 'toto@mail.com' });
+	var user = this.subject({ name: ' ', email: 'toto@mail.com' });
   equal(user.get('nickname'), 'toto');
   	
-  Ember.run(function(){user.set('email', 'titi@mail.com')};
+  Ember.run(function(){user.set('email', 'titi@mail.com');});
   equal(user.get('nickname'), 'titi');
 });
 
