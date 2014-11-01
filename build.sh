@@ -28,7 +28,7 @@ mv public/ public_bk/
 mkdir public/
 
 printMessage 4 "Copying ember build files to rails"
-cp -r ember/dist/ public/
+cp -R ember/dist/. public/.
 
 printMessage 4 "Cleaning Up"
 rm -rf public_bk/
