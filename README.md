@@ -18,7 +18,8 @@ How use this project
 
 ```
 bundle install
-rake db:create db:migrate db:seed // just one time
+cp ton-fichier-secret.yml config/secrets.yml
+rake db:create db:migrate // just one time
 rails s
 cd ember
 npm install
