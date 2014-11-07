@@ -7,6 +7,8 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   },
 
   afterModel: function (model) {
-    model.reload();
+    if(model.get('email') === undefined) {
+      model.reload();     
+    }
   }
 });
