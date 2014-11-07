@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
   has_many :skills
+  has_many :vehicles
 
   before_save :ensure_authentication_token
 

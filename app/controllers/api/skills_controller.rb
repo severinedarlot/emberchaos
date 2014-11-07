@@ -1,7 +1,6 @@
 class Api::SkillsController < ApplicationController
 
   def create
-    puts "################ #{current_user.id} #{params[:skill][:user_id]}"
     if current_user.id == params[:skill][:user_id].to_i
       skill = current_user.skills.create(title: params[:skill][:title])
     
