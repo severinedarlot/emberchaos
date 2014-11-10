@@ -2,7 +2,7 @@ import Ember from 'ember';
 import startApp from 'emberchaos/tests/helpers/start-app';
 
 var App;
-module('Integration - Landing Page', {
+module('Integration - Sign up', {
   setup: function() {
     App = startApp();
   },
@@ -11,8 +11,9 @@ module('Integration - Landing Page', {
   }
 });
 
-test('Should welcome me to Ember Chaos', function() {
+
+test('Landing page has link to sign up', function() {
   visit('/').then(function() {
-    equal(find('h2#title').text(), 'Welcome to Chaos');
+    equal(find('a:contains("Sign up")').length, 1);
   });
 });
