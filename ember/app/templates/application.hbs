@@ -10,6 +10,10 @@
 {{link-to 'Skills' 'skills'}}
 {{link-to 'About' 'about'}}
 {{link-to 'Experts' 'experts'}}
-{{link-to 'Account' 'account'}}
+{{#if session.isAuthenticated}}
+	{{link-to 'Account' 'account'}}
+	{{link-to 'Vehicles' 'vehicles'}}
+{{/if}}
 
 {{outlet}}
+

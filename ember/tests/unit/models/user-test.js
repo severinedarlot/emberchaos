@@ -4,8 +4,10 @@ import {
 } from 'ember-qunit';
 import Ember from 'ember';
 
+
+//Needed in unit test to make clear the dependecies !!! "Thoma's comment"
 moduleForModel('user', 'User Model', {
-  needs: ['model:skill', 'model:expert']
+  needs: ['model:skill', 'model:expert', 'model:vehicle']
 });
 
 test('Basic name', function() {

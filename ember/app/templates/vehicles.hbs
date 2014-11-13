@@ -1,0 +1,19 @@
+<h1>Mon véhicule</h1>
+
+
+<ul class="side-nav" role="navigation" title="Véhicules enregistrés">
+  	{{#each vehicle in model}}
+  	<li role="menuitem"><a href="#">{{vehicle.type}} </a>
+  	</li>  	
+  	{{/each}}
+  	<button {{action "createVehicle"}}>Créer un nouveau véhicule</button>
+</ul>
+<div class="row">
+	<div class="large-2 columns">
+	</div>
+	<div class="large-10 columns">
+		"Mettre les caratéristiques du véhicule"
+
+	</div>
+</div>
+

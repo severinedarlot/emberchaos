@@ -8,4 +8,4 @@ class Api::VehiclesController < ApplicationController
     end
   end
 
-end
+end	

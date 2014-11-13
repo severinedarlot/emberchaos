@@ -15,8 +15,8 @@ Router.map(function() {
   this.route('login');
   this.route('signup');
   this.route('skills');
-  // routing for the vehicle
-  this.route('vehicle');
+  // routing for the vehicles
+  this.route('vehicles');
 });
 
 export default Router;
