@@ -4,7 +4,7 @@
 		<h3>My registered vehicles</h3>
 		<ul class="side-nav" role="navigation" title="Véhicules enregistrés">
 		  	{{#each vehicle in model}}
-		  	<li role="menuitem"><a href="#">{{vehicle.name}} --> {{vehicle.brand}} {{vehicle.model}} </a>
+		  	<li role="menuitem"><a>{{vehicle.name}} est une {{vehicle.brand}} {{vehicle.model}}</a>
 		  	</li>  	
 		  	{{/each}}
 		  	<button {{action "createNewVehicle"}}>Nouveau véhicule</button>
@@ -22,8 +22,13 @@
 			    </div>
 			    <div class="row">
 			    	<div class="large-12 columns">
-			    		<label>Car, motorcycle or bike
-		    				{{view 'autosave-text-field' typeBinding='type' type="text" placeholder="Choose the kind of vehicle"}}
+			    		<label>Type
+			    		  <select>
+			    		    <option value="Car">Car</option>
+			    		    <option value="Motorbike">Motorbike</option>
+{{!-- 			    		    <option value="Bike">Bike</option> --}}
+			    		    <option {{view 'autosave-text-field' valueBinding='type' type="option"}}>Bike en Ember </option>
+			    		  </select>
 			    		</label>
 			    	</div>
 			    </div>
@@ -31,18 +36,18 @@
 			    <div class="row">
 			    	<div class="large-6 columns">
 			    		<label>Brand
-		    				{{view 'autosave-text-field' brandBinding='brand' placeholder="Brand"}}
+		    				{{view 'autosave-text-field' valueBinding='brand' placeholder="Brand"}}
 			    		</label>
 			    	</div>
 			    	<div class="large-6 columns">
 			    		<label>Car model
-		    				{{view 'autosave-text-field' modelBinding='model' placeholder="Enter the model of your vehicle"}}
+		    				{{view 'autosave-text-field' valueBinding='car_model' placeholder="Enter the model of your vehicle"}}
 			    		</label>
 			    	</div>
 			    </div>
-		  </form>
-	
 
+			    <button {{action "createNewVehicle"}}>Confirm</button>
+		  </form>
 	</div>
 </div>
 
