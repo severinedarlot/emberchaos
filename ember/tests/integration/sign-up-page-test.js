@@ -5,6 +5,7 @@ var App;
 module('Integration - Sign up', {
   setup: function() {
     App = startApp();
+    invalidateSession();
   },
   teardown: function() {
     Ember.run(App, 'destroy');
