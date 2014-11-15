@@ -17,5 +17,9 @@
     "ember-simple-auth": "0.7.1",
     "rails-csrf": "0.0.5",
     "foundation": "~5.4.7"
+  },
+  "resolutions": {
+    "jquery": ">= 2.1.0",
+    "ember": "1.8.1"
   }
 }
