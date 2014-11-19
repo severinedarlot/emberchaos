@@ -24,6 +24,12 @@ export default DS.Model.extend({
       return this.get('email').split('@')[0];
     }
     return this.get('name');
-  }.property('name', 'email')
+  }.property('name', 'email'),
+
+  savedVehicles: function() {
+    return this.get('vehicles').filter(function (vehicle) {
+      return vehicle.get('id') !== null;
+    });
+  }.property('vehicles.@each.id')
 
 });
