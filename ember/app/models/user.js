@@ -21,6 +21,9 @@ export default DS.Model.extend({
 
   nickname: function () {
     if (this.get('name') === undefined || this.get('name').trim().length === 0) {
+      if (this.get('email') === undefined) {
+        return '';
+      }
       return this.get('email').split('@')[0];
     }
     return this.get('name');
