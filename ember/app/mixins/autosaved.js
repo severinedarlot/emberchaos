@@ -9,10 +9,7 @@ export default Ember.Mixin.create({
     }
 
     if(this.get('model') != null) {
-      var skill = this.get('model');
-      this.get('model.user').then(function () {
-        skill.save().catch(failure);
-      });
+      this.get('model').save().catch(failure);
     } 
   }
 });

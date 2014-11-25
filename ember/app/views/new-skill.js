@@ -7,11 +7,8 @@ export default Ember.View.extend({
 
   createNewSkill: function () {
     if (this.get('skill') === null  || this.get('skill.id') !== null ) {
-      var newSkill = this.get('controller.store').createRecord('skill', {title: ''});
-      this.set('skill', newSkill);
-      this.get('user.skills').then(function(promise){
-        promise.pushObject(newSkill);
-      });      
+      var newSkill = this.get('user.skills').createRecord({title: ""});
+      this.set('skill', newSkill);      
     }
   }.observes('skill.id').on('init') 
 });
