@@ -1,9 +1,8 @@
 class VehicleSerializer < ActiveModel::Serializer
-  attributes 
-	:id, 
+  attributes :id, 
 	:user_id,
 	:name,
-	:type,
+	:kind,
 	:brand,
-	:model
+	:car_model
 end

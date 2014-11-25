@@ -5,9 +5,11 @@ Prerequisite
 -------------
 
 rake
-ruby
-Rails
-postgresql
+ruby 2.1.5
+Rails 4.1.6
+postgresql (do not forgot to create a user with the right to create a database)
+You may have a problem with Gnome : impossible to write in the gem directory, to force using a version of rails, etc. Please check if your terminal have the option "exectute command as connection shell"
+
 node
 ember-cli: npm install -g ember-cli
 bower: npm install -g bower

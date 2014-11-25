@@ -11,11 +11,19 @@ class Api::VehiclesController < ApplicationController
   end
 
   def create
-  	if vehicle.save
-  	  render json: vehicle, status: :created
-  	else
-  	  render json: { errors: vehicle.errors }, status: :unprocessable_entity
-  	end
+    if current_user.id == params[:vehicle][:user_id].to_i
+      vehicle = current_user.vehicles.create(
+#       kind: params[:vehicle][:kind],
+        car_model: params[:vehicle][:car_model])
+
+    	if vehicle.save
+    	  render json: vehicle, status: :created
+    	else
+    	  render json: { errors: vehicle.errors }, status: :unprocessable_entity
+    	end
+    else
+      render json: { errors: ['Forbidden action'] }, status: :forbidden
+    end
   end
 
   def show
