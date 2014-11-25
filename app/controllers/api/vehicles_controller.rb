@@ -19,7 +19,11 @@ class Api::VehiclesController < ApplicationController
   end
 
   def show
-    render json: vehicle.find(params[:id])
+    if current_user.nil?
+      render json: {}, status: :forbidden
+    else
+      render json: current_user.vehicle.find(params[:id])
+    end
   end
 
 end	

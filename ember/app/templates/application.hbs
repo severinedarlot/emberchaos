@@ -7,13 +7,13 @@
 
 <h2 id='title'>Welcome to Chaos</h2>
 
+{{link-to 'Vehicles' 'vehicles'}}
 {{link-to 'Skills' 'skills'}}
 {{link-to 'About' 'about'}}
 {{link-to 'Experts' 'experts'}}
 {{#if session.isAuthenticated}}
 	{{link-to 'Account' 'account'}}
 {{/if}}
-{{link-to 'Vehicles' 'vehicles'}}
 
 {{outlet}}
 
