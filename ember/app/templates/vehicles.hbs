@@ -10,12 +10,14 @@
 		  	<button {{action "createNewVehicle"}}>Nouveau véhicule</button>
 		</ul>
 		<h3>My new vehicles</h3>
-		<ul class="side-nav" role="navigation" title="Véhicules enregistrés">
-		  	{{#each vehicle in model}}
-		  	<li role="menuitem"><a>{{vehicle.name}} est une {{vehicle.brand}} {{vehicle.model}}</a>
-		  	</li>  	
-		  	{{/each}}
-		</ul>	
+			{{#unless vehicle}}
+				<ul class="side-nav" role="navigation" title="Véhicules enregistrés">
+				  	{{#each vehicle in controller}}
+				  	<li role="menuitem"><a>{{vehicle.name}} est une {{vehicle.brand}} {{vehicle.car_model}}</a>
+				  	</li>  	
+				  	{{/each}}
+				</ul>	
+			{{/unless}}
 		{{outlet}}		
 	</div>
 	<div class="large-8 columns">
@@ -32,9 +34,9 @@
 			    	<div class="large-12 columns">
 			    		<label>Type
 			    		  <select>
-			    		    <option value="Car">Car</option>
+			    		  	<option>{{view 'autosave-text-field' valueBinding='kind' text="car"}}</option>
 			    		    <option value="Motorbike">Motorbike</option>
-							<option value="Bike">Bike</option>
+									<option value="Bike">Bike</option>
 			    		  </select>
 			    		</label>
 			    	</div>
@@ -58,4 +60,6 @@
 		  </form>
 	</div>
 </div>
+
+
 
