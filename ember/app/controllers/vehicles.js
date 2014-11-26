@@ -7,7 +7,7 @@ export default Ember.ArrayController.extend({
       self.set('error', '');
       vehicle = this.get('currentUser.vehicles').createRecord({
         name: this.get('name'), 
-        type: this.get('type'), 
+        type: this.get('kind'), 
         brand: this.get('brand'), 
         car_model: this.get('car_model')});
       vehicle.save().catch(function (reason) {

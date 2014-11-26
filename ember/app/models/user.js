@@ -10,7 +10,7 @@ export default DS.Model.extend({
   presentation: DS.attr('string'),
   skills: DS.hasMany('skill', {async:true}),
   //vehicles
-  vehicles:DS.hasMany('vehicle', {async:true}),
+  vehicles: DS.hasMany('vehicle', {async:true}),
   identified: false,
 
   savedSkills: function() {

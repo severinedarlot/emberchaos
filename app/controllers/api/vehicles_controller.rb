@@ -13,7 +13,9 @@ class Api::VehiclesController < ApplicationController
   def create
     if current_user.id == params[:vehicle][:user_id].to_i
       vehicle = current_user.vehicles.create(
-#       kind: params[:vehicle][:kind],
+        name: params[:vehicle][:name],
+        kind: params[:vehicle][:kind],
+        brand: params[:vehicle][:brand],
         car_model: params[:vehicle][:car_model])
 
     	if vehicle.save
@@ -22,7 +24,7 @@ class Api::VehiclesController < ApplicationController
     	  render json: { errors: vehicle.errors }, status: :unprocessable_entity
     	end
     else
-      render json: { errors: ['Forbidden action'] }, status: :forbidden
+      render json: { errors: ['Déjà créé'] }, status: :forbidden
     end
   end
 
