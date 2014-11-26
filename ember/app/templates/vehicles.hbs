@@ -4,7 +4,7 @@
 		<h3>My registered vehicles</h3>
 		<ul class="side-nav" role="navigation" title="Véhicules enregistrés">
 		  	{{#each vehicle in controller}}
-		  	<li role="menuitem"><a>{{vehicle.name}} est une {{vehicle.brand}} {{vehicle.model}}</a>
+		  	<li role="menuitem"><a>{{vehicle.name}} est une {{vehicle.brand}} {{vehicle.car_model}}</a>
 		  	</li>  	
 		  	{{/each}}
 		  	<button {{action "createNewVehicle"}}>Nouveau véhicule</button>
@@ -60,6 +60,4 @@
 		  </form>
 	</div>
 </div>
-
-
 
