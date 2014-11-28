@@ -16,7 +16,9 @@ Router.map(function() {
   this.route('signup');
   this.route('skills');
   // routing for the vehicles
-  this.route('vehicles');
+  this.resource('vehicles',function() {
+    this.route('edit', {path: ':vehicle_id'});
+  });
 });
 
 export default Router;

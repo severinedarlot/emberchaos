@@ -15,6 +15,14 @@ export default Ember.ArrayController.extend({
         console.log('error during saving', reason.responseJSON.errors[0]);
       });
     } 
-
+    
+  
+    // deleteVehicle:function(){
+    //   var self = this, vehicle;
+    //   vehicle = this.get('currentUser.vehicles').destroyRecord() // Destroy =delete + persist 
+    //   })
+    // }
+    
+  }
 
 });
