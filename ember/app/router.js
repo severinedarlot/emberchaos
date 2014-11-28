@@ -7,7 +7,7 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('about');
-  this.resource('experts', function() {
+  this.resource('experts', function () {
     this.route('show', {path: ':expert_id'});
   });
   this.route('protected');
@@ -16,8 +16,8 @@ Router.map(function() {
   this.route('signup');
   this.route('skills');
   // routing for the vehicles
-  this.resource('vehicles',function() {
-    this.route('edit', {path: ':vehicle_id'});
+  this.resource('vehicles', function() {
+    this.route('show', {path: ':vehicle_id'});
   });
 });
 
