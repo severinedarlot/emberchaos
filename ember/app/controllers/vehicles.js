@@ -13,8 +13,16 @@ export default Ember.ArrayController.extend({
       vehicle.save().catch(function (reason) {
         self.set('error', reason.responseJSON.errors[0]);
         console.log('error during saving', reason.responseJSON.errors[0]);
-      }); // needed to get a PERSISTENT record
+      });
     } 
+    
+  
+    // deleteVehicle:function(){
+    //   var self = this, vehicle;
+    //   vehicle = this.get('currentUser.vehicles').destroyRecord() // Destroy =delete + persist 
+    //   })
+    // }
+    
   }
-      
+
 });

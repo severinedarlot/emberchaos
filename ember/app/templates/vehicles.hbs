@@ -1,27 +1,25 @@
 
+{{outlet}}
+
 <div class="row">
 	<div class="large-4 columns">
 		<h3>My registered vehicles</h3>
 		<ul class="side-nav" role="navigation" title="Véhicules enregistrés">
 		  	{{#each vehicle in controller}}
-		  	<li role="menuitem"><a>{{vehicle.name}} est une {{vehicle.brand}} {{vehicle.model}}</a>
+		  	<li role="menuitem">
+		  		<a>
+			  		{{#link-to 'vehicles.edit'}} {{vehicle.name}} 
+			  		{{/link-to}}
+		  		</a>
 		  	</li>  	
 		  	{{/each}}
 		  	<button {{action "createNewVehicle"}}>Nouveau véhicule</button>
 		</ul>
-		<h3>My new vehicles</h3>
-			{{#unless vehicle}}
-				<ul class="side-nav" role="navigation" title="Véhicules enregistrés">
-				  	{{#each vehicle in controller}}
-				  	<li role="menuitem"><a>{{vehicle.name}} est une {{vehicle.brand}} {{vehicle.car_model}}</a>
-				  	</li>  	
-				  	{{/each}}
-				</ul>	
-			{{/unless}}
-		{{outlet}}		
+	
 	</div>
 	<div class="large-8 columns">
 		  <form class="panel">
+		  		{{outlet}}	
 		    <h3>New vehicle</h3>
 			    <div class="row">
 			    	<div class="large-12 columns">
@@ -60,6 +58,4 @@
 		  </form>
 	</div>
 </div>
-
-
 
