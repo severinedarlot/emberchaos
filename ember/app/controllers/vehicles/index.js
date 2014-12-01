@@ -12,7 +12,7 @@ export default Ember.ArrayController.extend({
         name: this.get('name'), 
         type: this.get('kind'), 
         brand: this.get('brand'), 
-        car_model: this.get('car_model')});
+        carModel: this.get('carModel')});
       vehicle.save().catch(function (reason) {
         self.set('error', reason.responseJSON.errors[0]);
         console.log('error during saving', reason.responseJSON.errors[0]);
