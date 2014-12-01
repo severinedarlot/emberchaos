@@ -1,3 +1,15 @@
 <h3>Experts</h3>
 
+<ul>
+{{#each}}
+  <li>
+  
+    {{#link-to 'experts.show' this}} 
+      {{name}} ({{skills.length}})
+    {{/link-to}}
+
+  </li>
+{{/each}}
+</ul>
+
 {{outlet}}
