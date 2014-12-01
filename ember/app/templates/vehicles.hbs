@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="large-4 columns">
+    <h3>My registered vehicles</h3>
+    <ul class="side-nav" role="navigation" title="Véhicules enregistrés">
+        {{#each vehicle in controller}}
+        <li role="menuitem">
+          <a>
+            {{#link-to 'vehicles.show' vehicle}} 
+              {{vehicle.name}} 
+            {{/link-to}}
+          </a>
+        </li>   
+        {{/each}}
+        <button {{action "createNewVehicle"}}>Nouveau véhicule</button>
+    </ul>
+  
+  </div>
+  <div class="large-8 columns">
+    {{outlet}}
+  </div>
+</div>
