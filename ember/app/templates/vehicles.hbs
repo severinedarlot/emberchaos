@@ -5,7 +5,8 @@
     <button {{action "createNewVehicle"}}>Nouveau véhicule</button>
     <h3>My registered vehicles</h3>
     <ul class="side-nav" role="navigation" title="Véhicules enregistrés">
-        {{#each vehicle in controller}}
+      {{#link-to 'vehicles.index' class="button"}}Nouveau véhicule{{/link-to}}
+      {{#each vehicle in model}}
         <li role="menuitem">
           <a>
             {{#link-to 'vehicles.show' vehicle}} 
@@ -13,8 +14,12 @@
             {{/link-to}}
           </a>
         </li>   
+<<<<<<< HEAD
         {{/each}}
 
+=======
+      {{/each}}
+>>>>>>> 781f09a4bb10ae03b7d1f0ea21bd530e0c960130
     </ul>
   
   </div>
