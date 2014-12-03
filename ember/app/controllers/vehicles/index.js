@@ -19,13 +19,6 @@ export default Ember.ArrayController.extend({
       });
     } 
     
-  
-    // deleteVehicle:function(){
-    //   var self = this, vehicle;
-    //   vehicle = this.get('currentUser.vehicles').destroyRecord() // Destroy =delete + persist 
-    //   })
-    // }
-    
   }
 
 });

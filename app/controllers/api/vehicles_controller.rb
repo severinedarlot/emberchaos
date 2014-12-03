@@ -36,4 +36,12 @@ class Api::VehiclesController < ApplicationController
     end
   end
 
-end	
+  def destroy
+    if current_user.nil?
+      render json: {}, status: :forbidden
+    else
+      current_user.vehicles.find(params[:id]).destroy
+      render json: {}
+    end
+  end
+end
