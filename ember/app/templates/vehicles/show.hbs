@@ -1,15 +1,29 @@
-<h1>Your vehicle</h1>
-
-<div class="row">
-  <div class="large-4 columns">
-    <div class="panel">
-      <form>
-        Nickname of your vehicle: {{view 'autosave-text-field' valueBinding='name'}}<br>
-        Type: {{view 'autosave-text-field' valueBinding='kind'}}<br>
-        Brand: {{view 'autosave-text-field' valueBinding='brand'}}<br>
-        Model: {{view 'autosave-text-field' valueBinding='carModel'}}<br>
-        <button {{action "deleteVehicle"}}> Delete this vehicle </button>   
-      </form>
+<dl class="accordion" data-accordion>
+  <dd class="accordion-navigation">
+    <a>Vehicle ID</a>
+    <div id="panel1" class="content active">
+      <div class="panel">
+        <form>
+          Nickname of your vehicle: {{view 'autosave-text-field' valueBinding='name'}}<br>
+          Type: {{view 'autosave-text-field' valueBinding='kind'}}<br>
+          Brand: {{view 'autosave-text-field' valueBinding='brand'}}<br>
+          Model: {{view 'autosave-text-field' valueBinding='carModel'}}<br>
+          <button {{action "deleteVehicle"}}> Delete this vehicle </button>   
+        </form>
+      </div>
     </div>
-  </div>
-</div>
+  </dd>
+  <dd class="accordion-navigation">
+    <a> {{link-to 'History'}} </a>
+    <div id="panel2" class="content">
+      Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+  </dd>
+  <dd class="accordion-navigation">
+    <a>{{link-to 'Done'}}</a>
+    <div id="panel3" class="content">
+      Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+  </dd>
+</dl>
+

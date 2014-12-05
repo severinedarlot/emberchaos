@@ -18,6 +18,7 @@ Router.map(function() {
   // routing for the vehicles
   this.resource('vehicles', function() {
     this.route('show', {path: ':vehicle_id'});
+    this.route('new');
   });
 });
 

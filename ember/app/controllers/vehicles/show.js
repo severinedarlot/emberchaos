@@ -11,7 +11,7 @@ export default Ember.ObjectController.extend({
       this.get('model').destroyRecord().then(function() {
         var nextVehicle = self.get('currentUser.vehicles.firstObject');
         if (nextVehicle === undefined) {
-          self.transitionToRoute('vehicles.index');
+          self.transitionToRoute('vehicles.new');
         } else {
           self.transitionToRoute('vehicles.show', nextVehicle);
         } 
