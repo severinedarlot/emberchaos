@@ -6,7 +6,7 @@ export default Ember.View.extend({
   templateName: 'new-vehicle',
   user: null,
   skill: null,
-
+  
   createNewVehicle: function () {
     if (this.get('vehicle') === null  || this.get('vehicle.id') !== null ) {
       var newVehicle = this.get('controller.store').createRecord('vehicle', {name: ''});
